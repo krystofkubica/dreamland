@@ -1,177 +1,140 @@
-:root {
-    font-size: 16px;
-    font-family: 'Open Sans';
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #111113;
-    --bg-secondary: #141418;
-    --transition-speed: 600ms;
-  }
-  
-  body {
-    color: black;
-    background-color: rgb(0, 0, 0);
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-  }
-  body::-webkit-scrollbar {
-    width: 0.25rem;
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #1e1e24;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background: #6649b8;
-  }
-  main {
-    margin-left: 5rem;
-    padding: 1rem;
-  }
-  
-  .navbar {
-    position: fixed;
-    background-color: var(--bg-primary); 
-    width: 5rem;
-    height: 100vh;
-    transition: width 600ms ease;
-  }
-  
-  .navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .nav-item {
-    width: 100%;
-  }
-  
-  .nav-item:last-child {
-    margin-top: auto;
-  }
-  
-  .navbar:hover {
-    width: 16rem;
-  }
-  .nav-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: var(--text-primary);
+    font-family: sans-serif;
+    box-sizing: border-box;
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
-    transition: var(--transition-speed);
-  }
-  
-  .nav-link:hover {
-    filter: grayscale(0%) opacity(1);
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-  }
-  
-  .link-text {
-    display: none;
-    margin-left: 1rem;
-  }
-  
-  .nav-link svg {
-    width: 2rem;
-    min-width: 2rem;
-    margin: 0 1.5rem;
-  }
-  
-  .fa-primary {
-    color: #ff7eee;
-  }
-  
-  .fa-secondary {
-    color: #df49a6;
-  }
-  
-  .fa-primary,
-  .fa-secondary {
-    transition: var(--transition-speed);
-  }
-  .logo {
-    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000;
+    color: #e0e0e0;
+    padding-top: 70px; /* Add padding to the top of the body */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: transparent;
+    overflow: visible; /* Ensure overflow is visible */
+    padding: 20px 0; /* Add padding to the navbar */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    position: relative;
+    display: inline-block;
+    padding: 20px 30px; /* Increase padding */
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: var(--text-secondary);
-    background: var(--bg-secondary);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3ch;
-    width: 100%;
-  }
-  
-  .logo svg {
-    transform: rotate(0deg);
-    transition: var(--transition-speed);
-  }
-  
-  .logo-text
-  {
-    display: inline;
+    letter-spacing: 4px;
+    color: #A020F0; /* Updated to Purple */
+    font-size: 1.2rem;
+    transition: 0.5s;
+    overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.navbar a:hover {
+    background-color: #A020F0; /* Updated to Purple */
+    color: #050801;
+    box-shadow: 0 0 10px #A020F0,
+                0 0 50px #A020F0,
+                0 0 100px #A020F0,
+                0 0 300px #A020F0; /* Increase box-shadow values */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.navbar a span {
     position: absolute;
-    left: -999px;
-    transition: var(--transition-speed);
-  }
-  
-  .navbar:hover .logo svg {
-    transform: rotate(-180deg);
-  }
-  /* Small screens */
-@media only screen and (max-width: 600px) {
-    .navbar {
-      bottom: 0;
-      width: 100vw;
-      height: 5rem;
+    display: block;
+}
+
+.navbar a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Increase height */
+    background: linear-gradient(90deg, transparent, #A020F0); /* Updated to Purple */
+    animation: animate1 1s infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
     }
-  
-    .logo {
-      display: none;
+    100% {
+        left: 100%;
     }
-  
-    .navbar-nav {
-      flex-direction: row;
+}
+
+.navbar a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px; /* Increase width */
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #A020F0); /* Updated to Purple */
+    animation: animate2 1s infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
     }
-  
-    .nav-link {
-      justify-content: center;
+    100% {
+        top: 100%;
     }
-  
-    main {
-      margin: 0;
+}
+
+.navbar a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px; /* Increase height */
+    background: linear-gradient(270deg, transparent, #A020F0); /* Updated to Purple */
+    animation: animate3 1s infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
     }
-  }
-  
-  /* Large screens */
-  @media only screen and (min-width: 600px) {
-    .navbar {
-      top: 0;
-      width: 5rem;
-      height: 100vh;
+    100% {
+        right: 100%;
     }
-  
-  
-    .navbar:hover .link-text {
-      display: inline;
+}
+
+.navbar a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px; /* Increase width */
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #A020F0); /* Updated to Purple */
+    animation: animate4 1s infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
     }
-  
-    .navbar:hover .logo svg
-    {
-      margin-left: 11rem;
+    100% {
+        bottom: 100%;
     }
-  
-    .navbar:hover .logo-text
-    {
-      left: 0px;
-    }
-  }
+}
