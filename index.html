@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradient Text Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg>
+        <filter id="f">
+            <feGaussianBlur stdDeviation="0.025 0.2" />
+            <feColorMatrix type="saturate" values="1.3" />
+            <feBlend in="SourceGraphic" />
+        </filter>
+    </svg>
+    <div class="wrapper">
+        <div id="app">
+            <h1>Welcome to dreamland</h1>
+            <h2>Visualize and journal</h2>
+            <a href="#">Enter the app
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <script src="app.js"></script>
+        </div>
+    </div>
+</body>
+</html>
