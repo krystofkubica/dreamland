@@ -10,31 +10,29 @@
     <style>
         /* Enhanced Content Styling */
         .content {
-            background: rgba(160, 32, 240, 0.1); /* Semi-transparent background */
+            background: #2E0249; /* Changed to dark purple background */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 10px rgba(160, 32, 240, 0.5); /* Increased box-shadow */
-            color: #A020F0; /* Purple color */
-            text-shadow: 
-                0 0 3px #A020F0, 
-                0 0 6px #A010F0; /* Slightly increased text-shadow */
+            box-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
+            color: #FFFFFF; /* Changed text color to white */
+            text-shadow: none; /* Removed text-shadow for clarity */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             max-width: 800px;
             margin: 40px auto;
-            font-family: 'Montserrat', sans-serif; /* Apply Montserrat Font */
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Gradient Text with Background Clip */
+        /* Text Styling */
         .content p {
-            background: linear-gradient(90deg, #A020F0, #FF00FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 1;
+            /* Removed gradient text effect */
+            /* background: linear-gradient(90deg, #A020F0, #FF00FF); */
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
             margin-bottom: 20px;
             line-height: 1.6;
+            color: #FFFFFF; /* Ensured text color is white */
         }
 
         /* Animated Glow Effect */
@@ -45,7 +43,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(160, 32, 240, 0.2), transparent 60%); /* Slightly increased glow */
+            background: radial-gradient(circle, rgba(160, 32, 240, 0.2), transparent 60%);
             z-index: -1;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -54,11 +52,11 @@
 
         @keyframes glowPulse {
             0%, 100% {
-                opacity: 0.2; /* Slightly increased opacity */
+                opacity: 0.2;
                 transform: scale(1);
             }
             50% {
-                opacity: 0.4; /* Slightly increased opacity */
+                opacity: 0.4;
                 transform: scale(1.05);
             }
         }
@@ -66,7 +64,7 @@
         /* Zoom-in Hover Effect on Content Box */
         .content:hover {
             transform: scale(1.03);
-            box-shadow: 0 0 15px rgba(160, 32, 240, 0.6), /* Increased box-shadow */
+            box-shadow: 0 0 15px rgba(160, 32, 240, 0.6),
                         0 0 30px rgba(160, 32, 240, 0.5),
                         0 0 45px rgba(160, 32, 240, 0.4);
         }
@@ -77,26 +75,27 @@
             margin-bottom: 20px;
             text-align: center;
             font-weight: 700;
-            color: #A020F0;
-            text-shadow: 
-                0 0 3px #A020F0, /* Slightly increased text-shadow */
-                0 0 6px #A020F0;
-            transition: text-shadow 0.5s ease;
+            color: #FFFFFF; /* Changed heading color to white */
+            text-shadow: none; /* Removed text-shadow */
+            transition: color 0.3s ease;
         }
-
-        .content h1:hover {
-            text-shadow: 
-                0 0 4px #A020F0, /* Slightly increased text-shadow */
-                0 0 8px #A020F0;
+        /* Ensure Smooth Animation for Glow Pulse */
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow: none;
+            }
+            50% {
+                text-shadow: none;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="inapp.html" class="nav-button">HOME<span></span><span></span><span></span><span></span></a></li>
-            <li><a href="#journal" class="nav-button">JOURNAL<span></span><span></span><span></span><span></span></a></li>
-            <li><a href="#community" class="nav-button">COMMUNITY<span></span><span></span><span></span><span></span></a></li>
+            <li><a href="inapp.html" class="nav-button">HOME</a></li>
+            <li><a href="#journal" class="nav-button">JOURNAL</a></li>
+            <li><a href="#community" class="nav-button">COMMUNITY</a></li>
         </ul>
     </nav>
     <div class="content">
