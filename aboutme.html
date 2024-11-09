@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styleapp.css">
+    <!-- Import Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced Content Styling */
+        .content {
+            background: rgba(160, 32, 240, 0.1); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(160, 32, 240, 0.5); /* Increased box-shadow */
+            color: #A020F0; /* Purple color */
+            text-shadow: 
+                0 0 3px #A020F0, 
+                0 0 6px #A010F0; /* Slightly increased text-shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 40px auto;
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat Font */
+        }
+
+        /* Gradient Text with Background Clip */
+        .content p {
+            background: linear-gradient(90deg, #A020F0, #FF00FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Animated Glow Effect */
+        .content p::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(160, 32, 240, 0.2), transparent 60%); /* Slightly increased glow */
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: glowPulse 4s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.2; /* Slightly increased opacity */
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4; /* Slightly increased opacity */
+                transform: scale(1.05);
+            }
+        }
+
+        /* Zoom-in Hover Effect on Content Box */
+        .content:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(160, 32, 240, 0.6), /* Increased box-shadow */
+                        0 0 30px rgba(160, 32, 240, 0.5),
+                        0 0 45px rgba(160, 32, 240, 0.4);
+        }
+
+        /* Responsive Typography */
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+            color: #A020F0;
+            text-shadow: 
+                0 0 3px #A020F0, /* Slightly increased text-shadow */
+                0 0 6px #A020F0;
+            transition: text-shadow 0.5s ease;
+        }
+
+        .content h1:hover {
+            text-shadow: 
+                0 0 4px #A020F0, /* Slightly increased text-shadow */
+                0 0 8px #A020F0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="inapp.html" class="nav-button">HOME<span></span><span></span><span></span><span></span></a></li>
+            <li><a href="#journal" class="nav-button">JOURNAL<span></span><span></span><span></span><span></span></a></li>
+            <li><a href="#community" class="nav-button">COMMUNITY<span></span><span></span><span></span><span></span></a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>About Me</h1>
+        <p>Hello! I'm Christopher, a dedicated solo developer with a profound passion for coding and creating dynamic, engaging web applications. I thrive on learning new technologies and improving my skills every day. My journey into the world of coding began at a young age, and since then, I have honed my abilities across various programming languages and frameworks. From crafting elegant user interfaces to developing robust backend solutions, I find immense joy in every aspect of software development.</p>
+
+        <p>One of the things that set me apart as a developer is my ability to work independently. As a solo developer, I have the autonomy to explore new ideas and implement creative solutions without constraints. This independence has enabled me to take on challenging projects and see them through from concept to completion. I am constantly pushing the boundaries of what I can achieve, always striving to deliver high-quality, efficient, and innovative solutions.</p>
+        
+        <p>When I'm not immersed in code, you can find me indulging in my favorite hobby—playing video games. This love for gaming fuels my creativity and problem-solving skills, which I bring to my development projects. Video games have taught me the value of persistence, strategic thinking, and teamwork, all of which are essential qualities in the world of software development. I enjoy exploring different genres of games, from fast-paced action to immersive role-playing adventures, and I often draw inspiration from the intricate designs and storytelling elements in these games.</p>
+        
+        <p>I also enjoy spending time in nature, going on hikes, and exploring new places. The tranquility and beauty of the outdoors offer a refreshing break from the digital world, allowing me to recharge and find inspiration in the natural world. I believe that a balanced lifestyle is crucial for creativity and productivity, and my outdoor adventures often lead to fresh ideas and insights that I bring back to my work.</p>
+    </div>
+</body>
+</html>

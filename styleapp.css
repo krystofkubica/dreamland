@@ -30,7 +30,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Add gap between items */
 }
 
 .navbar li {
@@ -40,7 +41,7 @@ body {
 .navbar a {
     position: relative;
     display: inline-block;
-    padding: 20px 30px; /* Increase padding */
+    padding: 10px 20px; /* Reduce padding */
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #A020F0; /* Updated to Purple */
