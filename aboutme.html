@@ -26,10 +26,6 @@
 
         /* Text Styling */
         .content p {
-            /* Removed gradient text effect */
-            /* background: linear-gradient(90deg, #A020F0, #FF00FF); */
-            /* -webkit-background-clip: text; */
-            /* -webkit-text-fill-color: transparent; */
             margin-bottom: 20px;
             line-height: 1.6;
             color: #FFFFFF; /* Ensured text color is white */
@@ -70,7 +66,7 @@
         }
 
         /* Responsive Typography */
-        .content h1 {
+        .content h1, .content h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
@@ -79,6 +75,7 @@
             text-shadow: none; /* Removed text-shadow */
             transition: color 0.3s ease;
         }
+
         /* Ensure Smooth Animation for Glow Pulse */
         @keyframes neonPulse {
             0%, 100% {
@@ -88,25 +85,236 @@
                 text-shadow: none;
             }
         }
+
+        /* Journal Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #1e1e1e;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            color: #FFFFFF;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #FFFFFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #dreamForm textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+        }
+        #dreamForm button {
+            background-color: #a020f0;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #dreamForm button:hover {
+            background-color: #8a18d0;
+        }
+
+        /* My Dreams Section */
+        #mydreams {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 40px auto;
+            font-family: 'Montserrat', sans-serif;
+            color: #FFFFFF;
+        }
+        #mydreams h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dream {
+            background: #2E0249;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(160, 32, 240, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dream button {
+            background-color: #ff4d4d;
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dream button:hover {
+            background-color: #e60000;
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Navigation Styling */
+        .navbar {
+            background-color: transparent; /* Changed from #1e1e1e to transparent */
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li {
+            margin: 0 15px;
+        }
+        .nav-button {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .nav-button:hover {
+            color: #a020f0;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="inapp.html" class="nav-button">HOME</a></li>
-            <li><a href="#journal" class="nav-button">JOURNAL</a></li>
-            <li><a href="#community" class="nav-button">COMMUNITY</a></li>
+            <li><a href="#" class="nav-button" onclick="showAboutMe()">HOME</a></li>
+            <li><a href="#" class="nav-button" onclick="openJournalModal()">JOURNAL</a></li>
+            <li><a href="#" class="nav-button" onclick="showMyDreams()">MYDREAMS</a></li>
         </ul>
     </nav>
-    <div class="content">
+    <div class="content" id="aboutme">
         <h1>About Me</h1>
         <p>Hello! I'm Christopher, a dedicated solo developer with a profound passion for coding and creating dynamic, engaging web applications. I thrive on learning new technologies and improving my skills every day. My journey into the world of coding began at a young age, and since then, I have honed my abilities across various programming languages and frameworks. From crafting elegant user interfaces to developing robust backend solutions, I find immense joy in every aspect of software development.</p>
-
-        <p>One of the things that set me apart as a developer is my ability to work independently. As a solo developer, I have the autonomy to explore new ideas and implement creative solutions without constraints. This independence has enabled me to take on challenging projects and see them through from concept to completion. I am constantly pushing the boundaries of what I can achieve, always striving to deliver high-quality, efficient, and innovative solutions.</p>
-        
-        <p>When I'm not immersed in code, you can find me indulging in my favorite hobby—playing video games. This love for gaming fuels my creativity and problem-solving skills, which I bring to my development projects. Video games have taught me the value of persistence, strategic thinking, and teamwork, all of which are essential qualities in the world of software development. I enjoy exploring different genres of games, from fast-paced action to immersive role-playing adventures, and I often draw inspiration from the intricate designs and storytelling elements in these games.</p>
-        
-        <p>I also enjoy spending time in nature, going on hikes, and exploring new places. The tranquility and beauty of the outdoors offer a refreshing break from the digital world, allowing me to recharge and find inspiration in the natural world. I believe that a balanced lifestyle is crucial for creativity and productivity, and my outdoor adventures often lead to fresh ideas and insights that I bring back to my work.</p>
     </div>
+
+    <!-- My Dreams Section -->
+    <div id="mydreams" class="content hidden">
+        <h2>My Dreams</h2>
+        <div id="dreamList">
+            <!-- Dreams will be appended here -->
+            <p>No dreams added yet.</p>
+        </div>
+    </div>
+
+    <!-- Journal Modal -->
+    <div id="journalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeJournalModal()">&times;</span>
+            <h2>Add a Dream</h2>
+            <form id="dreamForm">
+                <textarea id="dreamInput" placeholder="Describe your dream..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    function openJournalModal() {
+        document.getElementById('journalModal').style.display = 'block';
+    }
+    function closeJournalModal() {
+        document.getElementById('journalModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+        var modal = document.getElementById('journalModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Navigation Functions
+    function showAboutMe(){
+        document.getElementById('aboutme').classList.remove('hidden');
+        document.getElementById('mydreams').classList.add('hidden');
+    }
+
+    function showMyDreams(){
+        document.getElementById('aboutme').classList.add('hidden');
+        document.getElementById('mydreams').classList.remove('hidden');
+    }
+
+    // Load dreams from localStorage on page load
+    document.addEventListener('DOMContentLoaded', loadDreams);
+
+    // Handle dream form submission
+    document.getElementById('dreamForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var dreamText = document.getElementById('dreamInput').value.trim();
+        if(dreamText){
+            saveDream(dreamText);
+            document.getElementById('dreamInput').value = '';
+            closeJournalModal();
+            loadDreams();
+        }
+    });
+
+    function saveDream(dream) {
+        let dreams = JSON.parse(localStorage.getItem('dreams')) || [];
+        dreams.push(dream);
+        localStorage.setItem('dreams', JSON.stringify(dreams));
+    }
+
+    function loadDreams() {
+        let dreams = JSON.parse(localStorage.getItem('dreams')) || [];
+        let dreamList = document.getElementById('dreamList');
+        dreamList.innerHTML = '';
+        if(dreams.length === 0){
+            dreamList.innerHTML = '<p>No dreams added yet.</p>';
+            return;
+        }
+        dreams.forEach(function(dream, index){
+            let dreamDiv = document.createElement('div');
+            dreamDiv.classList.add('dream');
+            dreamDiv.innerHTML = `<p>${dream}</p><button onclick="deleteDream(${index})">Delete</button>`;
+            dreamList.appendChild(dreamDiv);
+        });
+    }
+
+    function deleteDream(index) {
+        let dreams = JSON.parse(localStorage.getItem('dreams')) || [];
+        dreams.splice(index, 1);
+        localStorage.setItem('dreams', JSON.stringify(dreams));
+        loadDreams();
+    }
+    </script>
 </body>
 </html>
